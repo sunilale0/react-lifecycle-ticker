@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# REACT LIFECYCLE TICKER - First Introduction to React Lifecycle
+This is the application where I got introduced to `componentDidMount()` a function of React Lifecycle that is invoked automatically when the particular component gets mounted. 
 
-## Available Scripts
+State and Lifecycle are only available in a class-based component in contrast to functional component (which btw can have similar functions using 
+React Hooks(
+- State Hook
+- Effect Hook
+)).
 
-In the project directory, you can run:
+Hence, I realized after this lession that I had been using a component of React Lifecycle called `render()`.
 
-### `npm start`
+## Code Snippets
+```javascript
+  componentDidMount() {
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    this.state.setIntID = setInterval(()=>
+      this.setState({
+          ticker: this.state.ticker + 1
+        }), 1000
+    )
+  }
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```
+when the component, which in this case is the main component, `app.js` is called `componentDidMount()` is invoked at first. which invokes `setInterval()` storing the unique idea it returns to `this.state.setIntID`. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### The live deployment can be found at https://github.com/sunilale0/react-lifecycle-ticker
